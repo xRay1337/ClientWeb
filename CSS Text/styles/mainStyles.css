@@ -31,3 +31,7 @@ p {
     color: #4B9BBB;
     font-weight: bold;
 }
+
+.strike {
+    text-decoration: line-through;
+}
