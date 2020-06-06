@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>Academ IT School</title>
+</head>
+<body>
+    <h1>Главная страница</h1>
+
+    <form action="handler.php" name="main-form" method="post" autocomplete="on">
+        <fieldset>
+            <legend>Заявка на обучение</legend>
+            <label>
+                Ваше имя
+                <input type="text" />
+            </label>
+            <br />
+
+            <label>Ваша специальность: </label>
+            <label>
+                <input type="radio" name="specialty" value="0" checked />Программирование
+            </label>
+            <label>
+                <input type="radio" name="specialty" value="1" />Тестирование
+            </label>
+            <br />
+
+            <label>Ваша специализация:</label>
+            <label>
+                <input type="checkbox" name="specialization" value="0" />Desktop
+            </label>
+            <label>
+                <input type="checkbox" name="specialization" value="1" />Web
+            </label>
+            <label>
+                <input type="checkbox" name="specialization" value="2" />Mobile
+            </label>
+            <label>
+                <input type="checkbox" name="specialization" value="3" />System
+            </label>
+            <label>
+                <input type="checkbox" name="specialization" value="4" />Other
+            </label>
+            <br />
+
+            <label>
+                Ваш уровень:
+                <select>
+                    <option value="0" selected>Intern</option>
+                    <option value="1">Junior</option>
+                    <option value="2">Middle</option>
+                    <option value="3">Senior</option>
+                </select>
+            </label>
+            <br />
+
+            <label>Выбранные курсы:</label>
+            <br />
+
+            <select multiple>
+                <option value="0" selected>Основы программирования</option>
+                <option value="1">ООП</option>
+                <option value="2">Основы БД</option>
+                <option value="3">Клиентский WEB</option>
+                <option value="4">Серверный WEB</option>
+                <option value="5">Основы тестирования</option>
+                <option value="6">Автоматизация тестирования</option>
+            </select>
+            <br />
+
+            <label>
+                Ваш E-mail
+                <input type="email" />
+            </label>
+            <br />
+
+            <label>
+                Ваш номер телефона*
+                <input type="tel" required />
+            </label>
+            <br />
+
+            <textarea placeholder="Комментарий"></textarea>
+            <br />
+
+            <button type="submit">Оставить заявку</button>
+        </fieldset>
+    </form>
+
+    <a href="details.html">Подробнее</a>
+</body>
+</html>
