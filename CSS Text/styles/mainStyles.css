@@ -2,6 +2,7 @@
     background: #FEEED6;
     color: #676565;
     font-family: sans-serif;
+    padding: 10px;
 }
 
 main {
@@ -11,14 +12,14 @@ main {
     font-size: 18px;
 }
 
-p {
-    margin: 0 0 10px;
+h1 {
+    font-size: 33px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 
-.main_heading {
-    font-size: 33px;
-    margin: 0 0 15px;
-    text-transform: uppercase;
+.text, .subtitle {
+    margin-bottom: 15px;
 }
 
 .text {
@@ -28,7 +29,7 @@ p {
 }
 
 .title {
-    color: #4B9BBB;
+    color: #37A7C5;
     font-weight: bold;
 }
 
