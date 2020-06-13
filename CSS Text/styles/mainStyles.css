@@ -1,4 +1,5 @@
 ﻿body {
+    background: #FEEED6;
     color: #676565;
     font-family: sans-serif;
     padding: 10px;
@@ -6,28 +7,32 @@
 
 main {
     width: 100%;
-    max-width: 860px;
+    max-width: 850px;
     margin: 0 auto;
-}
-
-.twitter-list {
-    width: 100%;
-    white-space: nowrap;
-}
-
-.twitter-list-head {
-    text-align: left;
-    font-weight: bold;
-    background: #3498DB;
-    color: #fff;
-}
-
-.odd-rows {
-    background: #EEEEEE;
-}
-
-.twitter-list-th, .twitter-list-td {
-    border: 1px solid #CCCCCC;
     font-size: 18px;
-    padding: 17px;
+}
+
+h1 {
+    font-size: 33px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.text, .subtitle {
+    margin-bottom: 15px;
+}
+
+.text {
+    text-align: justify;
+    text-indent: 20px;
+    line-height: 1.5;
+}
+
+.title {
+    color: #37A7C5;
+    font-weight: bold;
+}
+
+.strike {
+    text-decoration: line-through;
 }
