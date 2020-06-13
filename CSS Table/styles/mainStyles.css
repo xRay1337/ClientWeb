@@ -1,0 +1,38 @@
+﻿body {
+    background: #FEEED6;
+    color: #676565;
+    font-family: sans-serif;
+    padding: 10px;
+}
+
+main {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 18px;
+}
+
+h1 {
+    font-size: 33px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.text, .subtitle {
+    margin-bottom: 15px;
+}
+
+.text {
+    text-align: justify;
+    text-indent: 20px;
+    line-height: 1.5;
+}
+
+.title {
+    color: #37A7C5;
+    font-weight: bold;
+}
+
+.strike {
+    text-decoration: line-through;
+}
