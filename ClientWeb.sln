@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30128.74
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HTML", "HTML\HTML.csproj", "{7644721F-AF52-4A37-90E0-8EA51BF199EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS Text", "CSS Text\CSS Text.csproj", "{C9837DCF-CC33-4789-8FFF-858AF110D248}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS Table", "CSS Text\CSS Table.csproj", "{C9837DCF-CC33-4789-8FFF-858AF110D248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS Table", "CSS Table\CSS Table.csproj", "{0C4FBF6A-DB33-48D6-8AF6-D7308DE20C75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS Text", "CSS Table\CSS Text.csproj", "{0C4FBF6A-DB33-48D6-8AF6-D7308DE20C75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
