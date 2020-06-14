@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <title>ClientWeb</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/mainStyles.css" />
+</head>
+<body>
+    <main>
+        <h1>Отправить заявку</h1>
+            <form class="application-form" action="handler.php" method="post">
+                <label class="input-title">
+                    Ваше имя
+                    <br />
+                    <input class="input-edit" name="name" type="text" placeholder="Ваше имя*" />
+                    <br />
+                </label>
+                <label class="input-title">
+                    Ваш номер телефона
+                    <br />
+                    <input class="input-edit" name="phone" type="text" placeholder="Ваш номер телефона*" />
+                    <br />
+                </label>
+                <label class="input-title">
+                    Ваш email или VK
+                    <br />
+                    <input class="input-edit" name="email" type="text" placeholder="Ваш email или VK*" />
+                    <br />
+                </label>
+                <label class="input-title">
+                    Комментарий
+                    <br />
+                    <textarea class="input-edit multi-field" name="comment" rows="5" placeholder="Комментарий (не обязательно)"></textarea>
+                    <br />
+                </label>
+                <lable class="comment">Заполните и отправте форму, и мы перезвоним Вам по указанному номеру</label>
+                <br />
+                <button class="button-submit" type="submit">Отправить заявку</button>
+            </form>
+    </main>
+</body>
+</html>

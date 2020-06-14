@@ -1,13 +1,13 @@
 ﻿body {
     color: #676565;
     font-family: sans-serif;
-    padding: 10px;
 }
 
 main {
     width: 100%;
     max-width: 860px;
     margin: 0 auto;
+    padding: 10px;
 }
 
 .twitter-list {
