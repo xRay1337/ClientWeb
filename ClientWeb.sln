@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS Text", "CSS Table\CSS T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS Form", "CSS Form\CSS Form.csproj", "{FE7C7EEB-1E71-4573-8202-53AEE417027D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gabriel", "Gabriel\Gabriel.csproj", "{3722F5FE-AB67-4FAA-A4FB-261F784F8CDE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FE7C7EEB-1E71-4573-8202-53AEE417027D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE7C7EEB-1E71-4573-8202-53AEE417027D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE7C7EEB-1E71-4573-8202-53AEE417027D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3722F5FE-AB67-4FAA-A4FB-261F784F8CDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3722F5FE-AB67-4FAA-A4FB-261F784F8CDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3722F5FE-AB67-4FAA-A4FB-261F784F8CDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3722F5FE-AB67-4FAA-A4FB-261F784F8CDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

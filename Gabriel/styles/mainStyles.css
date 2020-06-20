@@ -1,0 +1,38 @@
+﻿body {
+    color: #676565;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #C7E5F9, #86B4F7)
+}
+
+main {
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 10px;
+}
+
+header {
+    width: inherit;
+    max-width: inherit;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-around;
+    background: #FDD82E;
+    border-radius: 5px;
+}
+
+.link-container {
+    font-weight: bold;
+    padding: 20px;
+    text-align: center;
+}
+
+.links-border {
+    border: 1px solid #CAAA16;
+    margin: 10px 0px;
+    height: 15px;
+    width: 1px;
+}
