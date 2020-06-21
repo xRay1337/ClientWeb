@@ -1,38 +1,33 @@
 ﻿body {
-    background: #FEEED6;
     color: #676565;
     font-family: sans-serif;
 }
 
 main {
     width: 100%;
-    max-width: 850px;
+    max-width: 860px;
     margin: 0 auto;
-    font-size: 18px;
     padding: 10px;
 }
 
-h1 {
-    font-size: 33px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+.twitter-list {
+    width: 100%;
+    white-space: nowrap;
 }
 
-.text, .subtitle {
-    margin-bottom: 15px;
-}
-
-.text {
-    text-align: justify;
-    text-indent: 20px;
-    line-height: 1.5;
-}
-
-.title {
-    color: #37A7C5;
+.twitter-list-head {
+    text-align: left;
     font-weight: bold;
+    background: #3498DB;
+    color: #fff;
 }
 
-.strike {
-    text-decoration: line-through;
+.odd-rows {
+    background: #EEEEEE;
+}
+
+.twitter-list-th, .twitter-list-td {
+    border: 1px solid #CCCCCC;
+    font-size: 18px;
+    padding: 17px;
 }
