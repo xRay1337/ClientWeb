@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS Table", "CSS Table\CSS 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSS Text", "CSS Text\CSS Text.csproj", "{144C19AE-39EC-4050-BBE5-6DB68E7BF6F1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JS Arrays", "JS Arrays\JS Arrays.csproj", "{BFBB4F16-85AA-4B0D-8C57-31B2123EC505}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{144C19AE-39EC-4050-BBE5-6DB68E7BF6F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{144C19AE-39EC-4050-BBE5-6DB68E7BF6F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{144C19AE-39EC-4050-BBE5-6DB68E7BF6F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBB4F16-85AA-4B0D-8C57-31B2123EC505}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBB4F16-85AA-4B0D-8C57-31B2123EC505}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBB4F16-85AA-4B0D-8C57-31B2123EC505}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBB4F16-85AA-4B0D-8C57-31B2123EC505}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

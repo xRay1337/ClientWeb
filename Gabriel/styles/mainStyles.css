@@ -17,6 +17,12 @@ header {
     max-width: inherit;
 }
 
+section{
+  width: inherit;
+  background: #F8F8F8;
+  padding: 0 10px;
+}
+
 .links-container {
     display: flex;
     justify-content: space-around;
@@ -35,4 +41,61 @@ header {
     margin: 10px 0px;
     height: 15px;
     width: 1px;
+}
+/* CSS for table */
+.order-table{
+    font-size: 12px;
+    width: inherit;
+    /* text-align: center; */
+}
+
+.order-table thead{
+  border-bottom: 2px solid #EEEFEF;
+  font-weight: bold;
+  text-align: left;
+}
+
+.order-table th, .order-table td{
+  padding: 10px 0;
+  vertical-align:middle;
+}
+
+.validator{
+
+}
+
+.letter{
+
+}
+
+.address{
+
+}
+
+.balance{
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.order-quantity{
+
+}
+
+.order-quantity input[type="range"]{
+    width: 70%;
+}
+
+.order-quantity input[type="text"]{
+    width: 30px;
+}
+
+
+
+.comment{
+
+}
+
+.comment input{
+  width: inherit;
 }
