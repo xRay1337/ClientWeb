@@ -4,26 +4,24 @@
 
     array.sort(function (e1, e2) {
         return e2 - e1;
-    })
+    });
     console.log("Sort array: " + array);
 
-    var firstFiveElementsOfAnArray = array.slice(0, 5);
-    console.log("First five elements of an array: " + firstFiveElementsOfAnArray);
+    var firstFiveElements = array.slice(0, 5);
+    console.log("First five elements of an array: " + firstFiveElements);
 
-    var lastFiveElementsOfAnArray = array.slice(array.length - 5);
-    console.log("Last five elements of an array: " + lastFiveElementsOfAnArray);
+    var lastFiveElements = array.slice(array.length - 5);
+    console.log("Last five elements of an array: " + lastFiveElements);
 
-    var sumOfEvenElements = array.reduce(function (sum, currentElement) {
-
-        if (currentElement % 2 === 0) {
-            sum += currentElement;
+    var evenElementsSum = array.reduce(function (acc, current) {
+        if (current % 2 === 0) {
+            acc += current;
         }
 
-        return sum;
-    })
-    console.log("The sum of the even elements of the array: " + sumOfEvenElements);
-}
-)();
+        return acc;
+    }, 0)
+    console.log("The sum of the even elements of the array: " + evenElementsSum);
+})();
 
 (function () {
     var array = [];
@@ -32,10 +30,15 @@
         array.push(i);
     }
 
-    var squaresOfEvenNumbers = array
-        .filter(e => e % 2 == 0)
-        .map(e => Math.pow(e, 2));
+    var evenNumberSquares = array
+        .filter(function (element) {
+            if (element % 2 === 0) {
+                return element;
+            }
+        })
+        .map(function (element) {
+            return Math.pow(element, 2);
+        });
 
-    console.log("Squares of even numbers in an array: " + squaresOfEvenNumbers);
-}
-)();
+    console.log("Squares of even numbers in an array: " + evenNumberSquares);
+})();
