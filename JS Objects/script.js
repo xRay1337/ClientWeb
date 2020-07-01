@@ -1,64 +1,64 @@
 ﻿(function () {
     var Germany = {
-        "name": "Germany",
-        "cities": [
+        name: "Germany",
+        cities: [
             {
-                "name": "Berlin",
-                "population": 3644826
+                name: "Berlin",
+                population: 3644826
             },
             {
-                "name": "Hamburg",
-                "population": 1841179
+                name: "Hamburg",
+                population: 1841179
             },
             {
-                "name": "Munich",
-                "population": 1456039
+                name: "Munich",
+                population: 1456039
             },
             {
-                "name": "Cologne",
-                "population": 1061000
+                name: "Cologne",
+                population: 1061000
             }
         ]
     }
     var Russia = {
-        "name": "Russia",
-        "cities": [
+        name: "Russia",
+        cities: [
             {
-                "name": "Moscow",
-                "population": 12692466
+                name: "Moscow",
+                population: 12692466
             },
             {
-                "name": "St. Petersburg",
-                "population": 5392992
+                name: "St. Petersburg",
+                population: 5392992
             },
             {
-                "name": "Novosibirsk",
-                "population": 1618039
+                name: "Novosibirsk",
+                population: 1618039
             }
         ]
     }
     var USA = {
-        "name": "USA",
-        "cities": [
+        name: "USA",
+        cities: [
             {
-                "name": "New York City",
-                "population": 8405837
+                name: "New York City",
+                population: 8405837
             },
             {
-                "name": "Los Angeles",
-                "population": 3990456
+                name: "Los Angeles",
+                population: 3990456
             },
             {
-                "name": "Chicago",
-                "population": 2716000
+                name: "Chicago",
+                population: 2716000
             },
             {
-                "name": "Washington",
-                "population": 705749
+                name: "Washington",
+                population: 705749
             },
             {
-                "name": "Boston",
-                "population": 694583
+                name: "Boston",
+                population: 694583
             }
         ]
     }
@@ -67,45 +67,47 @@
 
     console.log(countries);
 
-    function getCountryWithMaxNumberOfCities(array) {
+    function GetCountryWithMaxNumberOfCities(array) {
         var maxNumberOfCities = 0;
         var countries = [];
 
-        array.filter(e => {
-            if (e.cities.length > maxNumberOfCities) {
-                maxNumberOfCities = e.cities.length;
+        array.forEach(function (element) {
+            if (element.cities.length > maxNumberOfCities) {
+                maxNumberOfCities = element.cities.length;
             }
         });
 
-        array.forEach(e => {
-            if (e.cities.length === maxNumberOfCities) {
-                countries.push(e.name)
+        array.forEach(function (element) {
+            if (element.cities.length === maxNumberOfCities) {
+                countries.push(element.name);
             }
         });
 
         return countries;
     }
 
-    console.log("Country with max number of cities: " + getCountryWithMaxNumberOfCities(countries));
+    console.log("Country with max number of cities: " + GetCountryWithMaxNumberOfCities(countries));
 
-    function getCountryPopulation(array) {
+    function GetCountryPopulation(array) {
         var countriesWithPopulation = [];
 
-        for (var i = 0; i < array.length; i++) {
-            countriesWithPopulation[i] = {
-                "name": array[i].name,
-                "population": array[i].cities.reduce((total, city) => total + city.population, 0)
+        array.forEach(function (element, index) {
+            countriesWithPopulation[index] = {
+                name : element.name,
+                population : element.cities.reduce(function (total, city) {
+                    return total + city.population;
+                }, 0)
             };
-        };
+        })
 
         return countriesWithPopulation;
     }
 
-    var countryAndPopulation = getCountryPopulation(countries);
+    var countryAndPopulation = GetCountryPopulation(countries);
 
     console.log("Country with population:");
 
-    countryAndPopulation.forEach(e => {
-        console.log(e.name + " : " + e.population);
+    countryAndPopulation.forEach(function (element) {
+        console.log(element.name + " : " + element.population);
     })
 })();
