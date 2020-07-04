@@ -13,13 +13,14 @@
     var lastFiveElements = array.slice(array.length - 5);
     console.log("Last five elements of an array: " + lastFiveElements);
 
-    var evenElementsSum = array.reduce(function (acc, current) {
+    var evenElementsSum = array.reduce(function (sum, current) {
         if (current % 2 === 0) {
-            acc += current;
+            sum += current;
         }
 
-        return acc;
-    }, 0)
+        return sum;
+    }, 0);
+
     console.log("The sum of the even elements of the array: " + evenElementsSum);
 })();
 
@@ -33,8 +34,10 @@
     var evenNumberSquares = array
         .filter(function (element) {
             if (element % 2 === 0) {
-                return element;
+                return true;
             }
+
+            return false;
         })
         .map(function (element) {
             return Math.pow(element, 2);
