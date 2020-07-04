@@ -15,7 +15,7 @@
 
     var evenElementsSum = array.reduce(function (sum, current) {
         if (current % 2 === 0) {
-            sum += current;
+            return sum + current;
         }
 
         return sum;

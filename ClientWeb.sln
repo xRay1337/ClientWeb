@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JS Objects", "JS Objects\JS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JS TempConverter", "JS TempConverter\JS TempConverter.csproj", "{A8415FB5-85CF-4261-9449-887A197655C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JS TodoList", "JS TodoList\JS TodoList.csproj", "{FCC9387D-0B5E-4284-858A-56610CF326D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{A8415FB5-85CF-4261-9449-887A197655C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8415FB5-85CF-4261-9449-887A197655C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8415FB5-85CF-4261-9449-887A197655C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCC9387D-0B5E-4284-858A-56610CF326D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC9387D-0B5E-4284-858A-56610CF326D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC9387D-0B5E-4284-858A-56610CF326D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC9387D-0B5E-4284-858A-56610CF326D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
