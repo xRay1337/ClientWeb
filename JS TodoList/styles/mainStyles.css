@@ -1,0 +1,39 @@
+﻿body {
+    font-family: sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.input-container, .li-block {
+    width: 100%;
+    max-width: 300px;
+    margin: 5px auto;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    vertical-align: middle;
+    background: white;
+    border: 1px solid black;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.edit {
+    border: 1px solid black;
+    width: 85%;
+}
+
+.edit:focus, .button:focus {
+    outline: none;
+}
