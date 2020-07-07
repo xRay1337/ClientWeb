@@ -7,7 +7,7 @@ main {
     max-width: 850px;
     margin: 0 auto;
     font-size: 18px;
-    padding: 10px;
+    padding: 100px;
 }
 
 .converter, .input, .output, .button {
@@ -16,6 +16,10 @@ main {
     margin: 10px auto;
     font-size: 18px;
     padding: 10px;
+}
+
+.input:focus, .output:focus {
+    outline: none;
 }
 
 .button {
