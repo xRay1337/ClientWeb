@@ -33,11 +33,7 @@
 
     var evenNumberSquares = array
         .filter(function (element) {
-            if (element % 2 === 0) {
-                return true;
-            }
-
-            return false;
+            return element % 2 === 0;
         })
         .map(function (element) {
             return Math.pow(element, 2);
