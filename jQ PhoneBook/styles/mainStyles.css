@@ -1,0 +1,19 @@
+﻿body {
+    color: #676565;
+    font-family: sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.input-form, .input, .add-button {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    font-size: 18px;
+    padding: 10px;
+}

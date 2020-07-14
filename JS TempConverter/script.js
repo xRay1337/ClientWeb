@@ -15,9 +15,8 @@
             var fahrenheit = celsius * 1.8 + 32;
             var kelvin = celsius + 273.15;
 
-            converterOutput.value = "Celsius = " + celsius.toFixed(2) + "\n";
-            converterOutput.value += "Fahrenheit = " + fahrenheit.toFixed(2) + "\n";
-            converterOutput.value += "Kelvin = " + kelvin.toFixed(2);
+            converterOutput.value = "Celsius = " + celsius.toFixed(2) + "\n" +
+                "Fahrenheit = " + fahrenheit.toFixed(2) + "\n" + "Kelvin = " + kelvin.toFixed(2);
 
             converterInput.value = "";
         }
