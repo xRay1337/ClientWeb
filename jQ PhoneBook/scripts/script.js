@@ -77,4 +77,26 @@
     mainCheckbox.change(function () {
         $(".checkboxes").prop("checked", mainCheckbox.is(":checked"));
     });
+
+    $("#findButton").click(function () {
+        var tableRows = $("tbody tr");
+        var searchValue = $("#searchEdit").val().toLowerCase();
+
+        tableRows.each(function (ir, rows) {
+            var tableCells = $(rows).children();
+            $(rows).css("display", "none");
+
+            tableCells.each(function (ic, cell) {
+                if (cell.textContent.toLowerCase() === searchValue) {
+                    $(rows).css("display", "table-row");
+                }
+            });
+        });
+    });
+
+    $("#dropButton").click(function () {
+        $("tbody tr").each(function () {
+            $(this).css("display", "table-row");
+        });
+    });
 });
