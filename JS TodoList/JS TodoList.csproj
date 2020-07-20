@@ -71,6 +71,7 @@
     <Content Include="images\cancel.png" />
     <Content Include="images\edit.png" />
     <Content Include="images\remove.png" />
+    <Content Include="images\save.png" />
     <Content Include="index.html" />
     <Content Include="scripts\events.js" />
     <Content Include="styles\mainStyles.css" />

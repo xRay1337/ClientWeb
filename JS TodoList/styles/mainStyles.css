@@ -20,20 +20,35 @@ main {
 }
 
 .button {
+    border: 1px solid #000;
     vertical-align: middle;
-    background: white;
-    border: 1px solid black;
+    background: #fff;
 }
 
 .button:hover {
     cursor: pointer;
 }
 
-.edit {
-    border: 1px solid black;
-    width: 85%;
+.input {
+    border: 1px solid #000;
+    width: 88%;
 }
 
-.edit:focus, .button:focus {
+.li-edit {
+    border: none;
+    font-size: 16px;
+    font-style: italic;
+    padding: 0;
+}
+
+.input:focus, .button:focus, .li-edit:focus {
     outline: none;
+}
+
+.li-block img, .button img {
+    vertical-align: middle;
+}
+
+.displayNone {
+    display: none;
 }

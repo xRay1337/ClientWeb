@@ -1,29 +1,79 @@
-﻿var todoEdit = document.getElementById("todo-edit");
-var todoAddButton = document.getElementById("todo-add-button");
-var todoList = document.getElementById("todo-list");
+﻿(function () {
+    var todoInput = document.getElementById("todo-input");
+    var todoAddButton = document.getElementById("todo-add-button");
+    var todoList = document.getElementById("todo-list");
 
-todoAddButton.addEventListener("click", function (event) {
-    var text = todoEdit.value;
+    todoAddButton.addEventListener("click", function () {
+        var text = todoInput.value;
 
-    if (text !== "") {
-    var newItem = document.createElement("li");
-        newItem.innerHTML = "<div class='li-block'><span class='li-span'></span><button class='button li-delete-button' type='button'><img src='images/remove.png' alt='-' style='vertical-align: middle'></button></div>";
-    newItem.querySelector(".li-span").textContent = text;
+        if (text !== "") {
+            var newItem = document.createElement("li");
+            newItem.innerHTML = "<div class='li-block'>\
+                    <div class='li-note'>\
+                        <span class='li-span'></span>\
+                        <input class='li-edit displayNone' type='text' maxlength='20' autofocus />\
+                    </div>\
+                    <div>\
+                        <button class='button li-save-button displayNone' title='Save changes'><img src='images/save.png' alt='save'></button>\
+                        <button class='button li-cancel-button displayNone' title='Cancel changes'><img src='images/cancel.png' alt='cancel'></button>\
+                        <button class='button li-edit-button' title='Edit'><img src='images/edit.png' alt='edit'></button>\
+                        <button class='button li-delete-button' title='Delete'><img src='images/remove.png' alt='remove'></button>\
+                    </div>\
+                </div> ";
 
-    newItem.querySelector(".li-delete-button").addEventListener("click", function (e) {
-        newItem.parentNode.removeChild(newItem);
-        todoEdit.focus();
+            var liSpan = newItem.querySelector(".li-span");
+            var liEdit = newItem.querySelector(".li-edit");
+            var liSaveButton = newItem.querySelector(".li-save-button");
+            var liCancelButton = newItem.querySelector(".li-cancel-button");
+            var liEditButton = newItem.querySelector(".li-edit-button");
+            var liDeleteButton = newItem.querySelector(".li-delete-button");
+            var liElements = [liSpan, liEdit, liSaveButton, liCancelButton, liEditButton, liDeleteButton];
+
+            function SwapDisplayNoneClass(elements) {
+                elements.forEach(function (element) {
+                    if (element.classList.contains("displayNone")) {
+                        element.classList.remove("displayNone");
+                    } else {
+                        element.classList.add("displayNone");
+                    }
+                });
+            }
+
+            liSpan.textContent = text;
+            liEdit.value = text;
+
+            liDeleteButton.addEventListener("click", function () {
+                newItem.parentNode.removeChild(newItem);
+                todoInput.focus();
+            });
+
+            liEditButton.addEventListener("click", function () {
+                SwapDisplayNoneClass(liElements);
+                liEdit.focus();
+            });
+
+            liSaveButton.addEventListener("click", function () {
+                SwapDisplayNoneClass(liElements);
+                liSpan.textContent = liEdit.value;
+                todoInput.focus();
+            });
+
+            liCancelButton.addEventListener("click", function () {
+                SwapDisplayNoneClass(liElements);
+                liEdit.value = liSpan.textContent;
+                todoInput.focus();
+            });
+
+            todoList.appendChild(newItem);
+            todoInput.value = "";
+        }
+
+        todoInput.focus();
     });
 
-    todoList.appendChild(newItem);
-    todoEdit.value = "";
-    }
-
-    todoEdit.focus();
-});
-
-document.getElementById("todo-edit").addEventListener("keypress", function (event) {
-    if (event.keyCode === 13) {
-        document.getElementById("todo-add-button").click();
-    }
-});
+    document.getElementById("todo-input").addEventListener("keydown", function (event) {
+        if (event.code === "Enter") {
+            document.getElementById("todo-add-button").click();
+        }
+    });
+})();
