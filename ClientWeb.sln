@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JS TodoList", "JS TodoList\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jQ PhoneBook", "jQ PhoneBook\jQ PhoneBook.csproj", "{9F7ED40B-EFFE-4D8D-8CB9-C537920E9790}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Underscore", "Underscore\Underscore.csproj", "{3757E3EE-8D93-45EA-9336-FD54643CD576}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{9F7ED40B-EFFE-4D8D-8CB9-C537920E9790}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F7ED40B-EFFE-4D8D-8CB9-C537920E9790}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F7ED40B-EFFE-4D8D-8CB9-C537920E9790}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3757E3EE-8D93-45EA-9336-FD54643CD576}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3757E3EE-8D93-45EA-9336-FD54643CD576}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3757E3EE-8D93-45EA-9336-FD54643CD576}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3757E3EE-8D93-45EA-9336-FD54643CD576}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
