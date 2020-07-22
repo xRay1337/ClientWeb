@@ -17,52 +17,53 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text">F</span>
                 </div>
-                <input id="input-first-name" type="text" class="form-control" placeholder="First Name" aria-label="Username" aria-describedby="basic-addon1" autofocus>
+                <input id="input-first-name" type="text" class="form-control shadow-none" placeholder="First Name" aria-label="Username" aria-describedby="basic-addon1" autofocus>
             </div>
 
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">L</span>
                 </div>
-                <input id="input-last-name" type="text" class="form-control" placeholder="Last Name" aria-label="Username" aria-describedby="basic-addon1">
+                <input id="input-last-name" type="text" class="form-control shadow-none" placeholder="Last Name" aria-label="Username" aria-describedby="basic-addon1">
             </div>
 
             <div class="input-group mb-1">
                 <div class="input-group-prepend">
                     <span class="input-group-text">N</span>
                 </div>
-                <input id="input-phone-number" type="text" class="form-control" placeholder="Phone number" aria-label="Username" aria-describedby="basic-addon1">
+                <input id="input-phone-number" type="text" class="form-control shadow-none" placeholder="Phone number" aria-label="Username" aria-describedby="basic-addon1">
             </div>
 
             <button id="add-button" class="add-button btn btn-success" type="button">Add contact</button>
+            <button id="remove-all-button" class="remove-all-button btn btn-danger" type="button">Remove selected</button>
 
             <div class="input-group">
-                <input id="searchEdit" class="form-control" type="text" placeholder="Search" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                <input id="searchEdit" class="form-control shadow-none" type="text" placeholder="Search" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
                 <div class="input-group-append" id="button-addon4">
-                    <button id="findButton" class="btn btn-outline-secondary" type="button">Find</button>
-                    <button id="clearButton" class="btn btn-outline-secondary" type="button">Clear</button>
+                    <button id="findButton" class="btn btn-outline-secondary shadow-none" type="button">Find</button>
+                    <button id="clearButton" class="btn btn-outline-secondary shadow-none" type="button">Clear</button>
                 </div>
             </div>
-
-            <button id="remove-all-button" class="remove-all-button btn btn-danger" type="button">Remove selected</button>
         </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th><input id="main-checkbox" type="checkbox"></th>
-                    <th>№</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Phone number</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th><input id="main-checkbox" type="checkbox"></th>
+                        <th>№</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone number</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     </main>
     <!-- Modal for delete -->
-    <div id="confirmationModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div id="confirmationDelete" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -72,11 +73,31 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Delete contact(s)?</p>
+                    <p>Delete contact?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                    <button id="yesButton" type="button" class="btn btn-primary">Yes</button>
+                    <button id="yesDeleteButton" type="button" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for delete all -->
+    <div id="confirmationDeleteAll" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">The confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Delete selected contacts?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button id="yesDeleteAllButton" type="button" class="btn btn-primary">Yes</button>
                 </div>
             </div>
         </div>
