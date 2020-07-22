@@ -9,6 +9,9 @@
 </head>
 <body>
     <main class="container">
+        <div>
+            <h1 class="display-4 text-center m-3">Phone book</h1>
+        </div>
         <div class="input-form">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -37,9 +40,11 @@
                 <input id="searchEdit" class="form-control" type="text" placeholder="Search" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
                 <div class="input-group-append" id="button-addon4">
                     <button id="findButton" class="btn btn-outline-secondary" type="button">Find</button>
-                    <button id="dropButton" class="btn btn-outline-secondary" type="button">Drop</button>
+                    <button id="clearButton" class="btn btn-outline-secondary" type="button">Clear</button>
                 </div>
             </div>
+
+            <button id="remove-all-button" class="remove-all-button btn btn-danger" type="button">Remove selected</button>
         </div>
         <table class="table table-striped">
             <thead>
@@ -61,13 +66,13 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="exampleModalCenterTitle" class="modal-title">The confirmation</h5>
+                    <h5 class="modal-title">The confirmation</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Delete contact?</p>
+                    <p>Delete contact(s)?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
@@ -76,12 +81,12 @@
             </div>
         </div>
     </div>
-    <!-- Modal for dublicate -->
+    <!-- Modal for duplicate -->
     <div id="notificationModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="exampleModalCenterTitle" class="modal-title">Notification</h5>
+                    <h5 class="modal-title">Notification</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -95,7 +100,7 @@
             </div>
         </div>
     </div>
-    <script src="node_modules\jquery\dist\jquery.min.js"></script>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/script.js"></script>
 </body>

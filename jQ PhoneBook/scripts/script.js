@@ -1,6 +1,8 @@
 ﻿$(function () {
-    var rowNumber = 1;
+    var rowNumber = 0;
     var mainCheckbox = $("#main-checkbox");
+    var removeAllButton = $("#remove-all-button");
+    removeAllButton.hide();
 
     $("#add-button").click(function () {
         var firstName = $("#input-first-name");
@@ -8,35 +10,46 @@
         var phoneNumber = $("#input-phone-number");
         var allInputs = $(".container input");
 
-        allInputs.css("background", "white");
+        allInputs.removeClass("is-invalid")
 
         if (firstName.val() === "") {
-            firstName.css("background", "#f8d7da").focus();
+            firstName.addClass("is-invalid").focus();
         } else if (lastName.val() === "") {
-            lastName.css("background", "#f8d7da").focus();
+            lastName.addClass("is-invalid").focus();
         } else if (phoneNumber.val() === "") {
-            phoneNumber.css("background", "#f8d7da").focus();
+            phoneNumber.addClass("is-invalid").focus();
         } else {
-            var dublicate = false;
+            var duplicate = false;
 
             $(".phoneNumber").each(function (index, element) {
                 if (element.textContent === phoneNumber.val()) {
-                    dublicate = true;
+                    duplicate = true;
                     return false;
                 }
             });
 
-            if (dublicate) {
+            if (duplicate) {
                 $("#notificationModal").modal("show");
             } else {
-                var newContact = $("<tr><td><input class='checkboxes' type='checkbox'></td><td>" + (rowNumber++) + "</td><td>" + firstName.val() +
-                    "</td><td>" + lastName.val() + "</td><td class='phoneNumber'>" + phoneNumber.val() +
-                    "</td><td><button class='close remove-button' type='button' data-toggle='modal' data-target='#confirmationModal'><span aria-hidden='true'>&times;</span></button></td></tr>");
+                rowNumber += 1;
+                var newContact = $("<tr><td><input class='checkboxes' type='checkbox'></td><td>" + rowNumber + "</td><td class='fName'></td><td  class='lName'></td><td class='phoneNumber'></td><td><button class='close remove-button' type='button' data-toggle='modal' data-target='#confirmationModal' title='Remove contact'><span aria-hidden='true'>&times;</span></button></td></tr>");
+
+                newContact.find(".fName").text(firstName.val());
+                newContact.find(".lName").text(lastName.val());
+                newContact.find(".phoneNumber").text(phoneNumber.val());
 
                 $("tbody").append(newContact);
 
                 $(".checkboxes").change(function () {
                     mainCheckbox.prop("checked", false);
+
+                    if ($(this).is(":checked")) {
+                        removeAllButton.show(300);
+                    }
+
+                    if (!$(".checkboxes:checked").length) {
+                        removeAllButton.hide(300);
+                    }
                 });
 
                 $(".remove-button").click(function () {
@@ -46,15 +59,8 @@
 
                     $("#yesButton").click(function (e) {
                         e.stopImmediatePropagation();
-                        var checkboxesCount = $(".checkboxes:checked").length;
-
-                        if (checkboxesCount > 0) {
-                            $(".checkboxes:checked").closest("tr").remove();
-                        } else {
-                            thisRow.remove();
-                        }
-
-                        UpdateTableNumbering();
+                        thisRow.remove();
+                        updateTableNumbering();
                         mainCheckbox.prop("checked", false);
                         confirmation.modal("hide");
                     });
@@ -65,17 +71,37 @@
         }
     });
 
-    function UpdateTableNumbering() {
+    function updateTableNumbering() {
         rowNumber = 1;
 
         $("tbody tr").each(function () {
             $(this).find(":nth-child(2)").text(rowNumber);
-            rowNumber++;
+            rowNumber += 1;
         });
     }
 
     mainCheckbox.change(function () {
         $(".checkboxes").prop("checked", mainCheckbox.is(":checked"));
+
+        if ($(this).is(":checked")) {
+            removeAllButton.show(300);
+        } else {
+            removeAllButton.hide(300);
+        }
+    });
+
+    removeAllButton.click(function () {
+        var confirmation = $("#confirmationModal");
+        confirmation.modal("show");
+
+        $("#yesButton").click(function (e) {
+            e.stopImmediatePropagation();
+            $(".checkboxes:checked").closest("tr").remove();
+            removeAllButton.hide(300);
+            updateTableNumbering();
+            confirmation.modal("hide");
+            mainCheckbox.prop("checked", false);
+        });
     });
 
     $("#findButton").click(function () {
@@ -84,19 +110,18 @@
 
         tableRows.each(function (ir, rows) {
             var tableCells = $(rows).children();
-            $(rows).css("display", "none");
+            $(rows).hide();
 
             tableCells.each(function (ic, cell) {
                 if (cell.textContent.toLowerCase() === searchValue) {
-                    $(rows).css("display", "table-row");
+                    $(rows).show(300);
                 }
             });
         });
     });
 
-    $("#dropButton").click(function () {
-        $("tbody tr").each(function () {
-            $(this).css("display", "table-row");
-        });
+    $("#clearButton").click(function () {
+        $("tbody tr").show(300);
+        $("#searchEdit").val("").focus();
     });
 });
