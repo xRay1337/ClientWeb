@@ -31,10 +31,10 @@
     console.log("Люди от 20 до 30:");
     _.each(twenties, console.log);
 
-    var peoplesWithFullName = _.each(peoples, function (element) {
-        element.fullName = element.name + " " + element.lastName
+    _.each(peoples, function (element) {
+        element.fullName = element.name + " " + element.lastName;
     });
 
     console.log("Люди с полными именами:");
-    _.each(peoplesWithFullName, console.log);
+    _.each(peoples, console.log);
 })();
