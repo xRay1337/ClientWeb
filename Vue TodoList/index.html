@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/mainStyles.css" />
+    <title>Vue TodoList</title>
+</head>
+<body>
+    <div v-cloak id="app">
+        <main>
+            <todo-list></todo-list>
+        </main>
+    </div>
+
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="scripts/vueScript.js"></script>
+
+    <script id="todo-item-template" type="text/x-template">
+        <li>
+            <div class='li-block'>
+                <div class='li-note'>
+                    <span class='li-span' v-text="item.text"></span>
+                    <input class='li-edit display-none' type='text' maxlength='20' autofocus />
+                </div>
+                <div>
+                    <button class='button li-save-button display-none' @click="save" title='Save changes'><img src='images/save.png' alt='save'></button>
+                    <button class='button li-cancel-button display-none' @click="cancel" title='Cancel changes'><img src='images/cancel.png' alt='cancel'></button>
+                    <button class='button li-edit-button' @click="editItem" title='Edit'><img src='images/edit.png' alt='edit'></button>
+                    <button class='button li-delete-button' @click="deleteItem" title='Delete'><img src='images/remove.png' alt='remove'></button>
+                </div>
+            </div>
+        </li>
+    </script>
+
+    <script id="todo-list-template" type="text/x-template">
+        <div>
+            <div class="input-container">
+                <input id="todo-input" class="input" v-model="newItemText" type="text" placeholder="New note" maxlength="20" autofocus />
+                <button id="todo-add-button" class="button" @click="addItem" title="Add note"><img src="images/add.png" alt="+"></button>
+            </div>
+            <ul id="todo-list">
+                <todo-item :item="item"
+                           :key="item.id"
+                           @deleteItem="deleteItem"
+                           v-for="item in items"></todo-item>
+            </ul>
+        </div>
+    </script>
+
+    <script>
+        Vue.component("todo-item", {
+            data: function () {
+                return {
+                    isEdit: false
+                }
+            },
+            props: {
+                item: {
+                    type: Object,
+                    required: true
+                }
+            },
+            methods: {
+                save: function () {
+                    this.isEdit = false
+                    alert(this.isEdit)
+                    //TODO
+                },
+                cancel: function () {
+                    this.isEdit = false
+                    alert(this.isEdit)
+                    //TODO
+                },
+                editItem: function () {
+                    this.isEdit = true
+                    alert(this.isEdit)
+                    //this.$emit("editItem", this.item);
+                    //TODO
+                },
+                deleteItem: function () {
+                    this.$emit("deleteItem", this.item);
+                }
+            },
+            template: "#todo-item-template"
+        });
+
+        Vue.component("todo-list", {
+            data: function () {
+                return {
+                    items: [],
+                    newItemText: "",
+                    newId: 1
+                }
+            },
+            methods: {
+                addItem: function () {
+                    if (this.newItemText.trim().length === 0) {
+                        return;
+                    }
+
+                    this.items.push({
+                        id: this.newId,
+                        text: this.newItemText
+                    });
+
+                    this.newId++;
+                    this.newItemText = "";
+                },
+
+                //editItem: function () {
+                //    //isEdit: true
+                //    alert(isEdit)
+                //},
+
+                deleteItem: function (item) {
+                    this.items = this.items.filter(function (e) {
+                        return e !== item;
+                    });
+                }
+            },
+            template: "#todo-list-template"
+        });
+
+        new Vue({
+            el: "#app"
+        });
+    </script>
+</body>
+</html>

@@ -47,6 +47,8 @@
 
                 if (liEdit.value !== "") {
                     liSpan.textContent = liEdit.value;
+                } else {
+                    liEdit.value = liSpan.textContent;
                 }
 
                 todoInput.focus();
