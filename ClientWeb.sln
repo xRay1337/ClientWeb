@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Underscore", "Underscore\Un
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vue TodoList", "Vue TodoList\Vue TodoList.csproj", "{0A025C65-32AA-4DF0-857D-311C62938E70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "jQ TodoList", "jQ TodoList\jQ TodoList.csproj", "{D9E4808D-FF12-418D-869E-88DCF13E6BAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{0A025C65-32AA-4DF0-857D-311C62938E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A025C65-32AA-4DF0-857D-311C62938E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A025C65-32AA-4DF0-857D-311C62938E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E4808D-FF12-418D-869E-88DCF13E6BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E4808D-FF12-418D-869E-88DCF13E6BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E4808D-FF12-418D-869E-88DCF13E6BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E4808D-FF12-418D-869E-88DCF13E6BAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

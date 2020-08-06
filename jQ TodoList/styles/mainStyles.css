@@ -1,0 +1,54 @@
+﻿body {
+    font-family: sans-serif;
+}
+
+main {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.input-container, .li-block {
+    width: 100%;
+    max-width: 300px;
+    margin: 5px auto;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    border: 1px solid #000;
+    vertical-align: middle;
+    background: #fff;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.input {
+    border: 1px solid #000;
+    width: 88%;
+}
+
+.li-edit {
+    border: none;
+    font-size: 16px;
+    font-style: italic;
+    padding: 0;
+}
+
+.input:focus, .button:focus, .li-edit:focus {
+    outline: none;
+}
+
+.li-block img, .button img {
+    vertical-align: middle;
+}
+
+.display-none {
+    display: none;
+}
