@@ -49,6 +49,6 @@ main {
     vertical-align: middle;
 }
 
-.hidden {
+[v-cloak] {
     display: none;
 }

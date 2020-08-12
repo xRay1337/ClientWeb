@@ -13,21 +13,22 @@
         </main>
     </div>
 
-    <script src="node_modules/vue/dist/vue.js"></script>
-    <script src="scripts/vueScript.js"></script>
-
     <script id="todo-item-template" type="text/x-template">
         <li>
-            <div class='li-block'>
-                <div class='li-note'>
-                    <input ref="inputItem" v-bind:class="{ hidden: !isEdit }" class='li-edit' v-model="item.text" type='text' maxlength='20' autofocus />
-                    <span v-bind:class="{ hidden: isEdit }" class='li-span' v-text="item.text"></span>
+            <div class="li-block">
+                <div class="li-note">
+                    <input v-if="isEdit" ref="inputItem" class="li-edit" v-model="newValue" type="text" maxlength="20" autofocus />
+                    <span v-else class="li-span" v-text="sourceValue"></span>
                 </div>
                 <div>
-                    <button v-bind:class="{ hidden: !isEdit }" class='button li-save-button' @click="save" title='Save changes'><img src='images/save.png' alt='save'></button>
-                    <button v-bind:class="{ hidden: !isEdit }" class='button li-cancel-button' @click="cancel" title='Cancel changes'><img src='images/cancel.png' alt='cancel'></button>
-                    <button v-bind:class="{ hidden: isEdit }" class='button li-edit-button' @click="editItem" title='Edit'><img src='images/edit.png' alt='edit'></button>
-                    <button v-bind:class="{ hidden: isEdit }" class='button li-delete-button' @click="deleteItem" title='Delete'><img src='images/remove.png' alt='remove'></button>
+                    <template v-if="isEdit">
+                        <button class="button li-save-button" @click="save" title="Save changes"><img src="images/save.png" alt="save"></button>
+                        <button class="button li-cancel-button" @click="cancel" title="Cancel changes"><img src="images/cancel.png" alt="cancel"></button>
+                    </template>
+                    <template v-else>
+                        <button class="button li-edit-button" @click="editItem" title="Edit"><img src="images/edit.png" alt="edit"></button>
+                        <button class="button li-delete-button" @click="deleteItem" title="Delete"><img src="images/remove.png" alt="remove"></button>
+                    </template>
                 </div>
             </div>
         </li>
@@ -48,89 +49,7 @@
         </div>
     </script>
 
-    <script>
-        Vue.component("todo-item", {
-            data: function () {
-                return {
-                    isEdit: false,
-                    sourceValue: this.item.text.trim(),
-                    newValue: ""
-                }
-            },
-
-            props: {
-                item: {
-                    type: Object,
-                    required: true
-                }
-            },
-
-            methods: {
-                save: function () {
-                    this.newValue = this.item.text.trim()
-
-                    if (this.newValue.length === 0) {
-                        return
-                    }
-
-                    this.isEdit = false
-                    this.sourceValue = this.newValue
-                },
-
-                cancel: function () {
-                    this.isEdit = false
-                    this.item.text = this.sourceValue
-                },
-
-                editItem: function () {
-                    this.isEdit = true
-                },
-
-                deleteItem: function () {
-                    this.$emit("deleteItem", this.item)
-                }
-            },
-
-            template: "#todo-item-template"
-        });
-
-        Vue.component("todo-list", {
-            data: function () {
-                return {
-                    items: [],
-                    newItemText: "",
-                    newId: 1
-                }
-            },
-
-            methods: {
-                addItem: function () {
-                    if (this.newItemText.trim().length === 0) {
-                        return
-                    }
-
-                    this.items.push({
-                        id: this.newId,
-                        text: this.newItemText.trim()
-                    });
-
-                    this.newId++
-                    this.newItemText = ""
-                },
-
-                deleteItem: function (item) {
-                    this.items = this.items.filter(function (e) {
-                        return e !== item
-                    });
-                }
-            },
-
-            template: "#todo-list-template"
-        });
-
-        new Vue({
-            el: "#app"
-        });
-    </script>
+    <script src="node_modules/vue/dist/vue.js"></script>
+    <script src="scripts/vueScript.js"></script>
 </body>
 </html>
