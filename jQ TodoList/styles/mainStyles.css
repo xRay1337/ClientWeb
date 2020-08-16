@@ -23,9 +23,6 @@ main {
     border: 1px solid #000;
     vertical-align: middle;
     background: #fff;
-}
-
-.button:hover {
     cursor: pointer;
 }
 

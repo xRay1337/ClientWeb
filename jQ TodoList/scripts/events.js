@@ -6,7 +6,9 @@
     todoAddButton.click(function () {
         var text = todoInput.val();
 
-        if (text !== "") {
+        if (text === "") {
+            todoInput.prop("placeholder", "Type text");
+        } else {
             var newItem = $("<li>\
                     <div class='li-block'>\
                         <div class='li-note'>\
@@ -39,44 +41,38 @@
             });
 
             liEditButton.click(function () {
-                swapDisplayNoneClass(liElements);
+                toggleDisplayNoneClass(liElements);
                 liEdit.focus();
             });
 
             liSaveButton.click(function () {
-                swapDisplayNoneClass(liElements);
+                toggleDisplayNoneClass(liElements);
 
                 if (liEdit.val() !== "") {
                     liSpan.text(liEdit.val());
                 } else {
-                    liEdit.val(liSpan.textContent);
+                    liEdit.val(liSpan.text());
                 }
 
                 todoInput.focus();
             });
 
             liCancelButton.click(function () {
-                swapDisplayNoneClass(liElements);
+                toggleDisplayNoneClass(liElements);
                 liEdit.val(liSpan.text());
                 todoInput.focus();
             });
 
             todoInput.val("");
-            todoInput.attr("placeholder", "New note");
-        } else {
-            todoInput.attr("placeholder", "Type text");
+            todoInput.prop("placeholder", "New note");
         }
 
         todoInput.focus();
     });
 
-    function swapDisplayNoneClass(elements) {
+    function toggleDisplayNoneClass(elements) {
         $.each(elements, function (index, element) {
-            if (element.hasClass("display-none")) {
-                element.removeClass("display-none");
-            } else {
-                element.addClass("display-none");
-            }
+            element.toggleClass("display-none");
         });
     }
 
