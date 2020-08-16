@@ -7,7 +7,7 @@
 
     removeAllButton.hide();
     
-    function SwapAddRemoveButtons() {
+    function swapAddRemoveButtons() {
         if (isAddButton) {
             addButton.hide();
             removeAllButton.show();
@@ -25,7 +25,7 @@
         var phoneNumber = $("#input-phone-number");
         var allInputs = $(".container input");
 
-        allInputs.removeClass("is-invalid")
+        allInputs.removeClass("is-invalid");
 
         if (firstName.val() === "") {
             firstName.addClass("is-invalid").focus();
@@ -48,19 +48,19 @@
                 phoneNumber.addClass("is-invalid").focus();
             } else {
                 var newContact = $("<tr><td><input class='checkboxes' type='checkbox'></td><td>" + rowNumber + "</td><td class='fName'></td><td  class='lName'></td><td class='phoneNumber'></td><td><button class='close remove-button' type='button' data-toggle='modal' data-target='#confirmationModal' title='Remove contact'><span aria-hidden='true'>&times;</span></button></td></tr>");
-                rowNumber += 1;
+                rowNumber++;
 
                 newContact.find(".fName").text(firstName.val());
                 newContact.find(".lName").text(lastName.val());
                 newContact.find(".phoneNumber").text(phoneNumber.val());
 
-                $(".checkboxes").change(function () {
+                newContact.find(".checkboxes").change(function () {
                     mainCheckbox.prop("checked", false);
 
-                    if ($(this).is(":checked")) {
-                        SwapAddRemoveButtons();
-                    } else if (!$(".checkboxes:checked").length) {
-                        SwapAddRemoveButtons();
+                    if ($(this).is(":checked") && isAddButton) {
+                        swapAddRemoveButtons();
+                    } else if ($(".checkboxes:checked").length === 0) {
+                        swapAddRemoveButtons();
                     }
                 });
 
@@ -75,8 +75,8 @@
                         mainCheckbox.prop("checked", false);
                         confirmation.modal("hide");
 
-                        if (!$(".checkboxes:checked").length) {
-                            SwapAddRemoveButtons();
+                        if (!isAddButton) {
+                            swapAddRemoveButtons();
                         }
                     });
                 });
@@ -93,7 +93,7 @@
 
         $("tbody tr").each(function () {
             $(this).find(":nth-child(2)").text(rowNumber);
-            rowNumber += 1;
+            rowNumber++;
         });
     }
 
@@ -115,7 +115,7 @@
 
         $("#yesDeleteAllButton").click(function () {
             $(".checkboxes:checked").closest("tr").remove();
-            removeAllButton.hide();
+            swapAddRemoveButtons()
             updateTableNumbering();
             mainCheckbox.prop("checked", false);
             confirmation.modal("hide");
